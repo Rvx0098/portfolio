@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishit Verma | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="data.json">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 <body>
 
     <!-- NAVBAR -->
@@ -24,23 +34,38 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+ <section class="hero video-hero">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="video/main.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay -->
+    <div class="video-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
         <div class="hero-text">
             <h1>Hi, I'm <span>Rishit Verma</span></h1>
-            <h3>UI/UX Designer & Web Developer</h3>
+            <h3>UI/UX Designer • Web Developer 
+                • Creative Technologist </h3>   
+
             <p>
-                2nd Year B.Tech Data Analytics student at MIT ADT University.  
-                Passionate about clean design, user experience, and building creative digital products.
+                2nd Year B.Tech Data Analytics student at MIT ADT University,
+                focused on design, development, and creative expression.
             </p>
             <a href="#contact" class="btn">Connect With Me</a>
-            <link rel="stylesheet" href="style.css">
-
         </div>
 
         <div class="hero-img">
-            <img src="WhatsApp Image 2026-01-12 at 11.10.26 PM (1).jpeg" alt="Rishit Verma">
+            <img src="image/myimg.jpeg" alt="Rishit Verma">
         </div>
-    </section>
+    </div>
+
+</section>
+
 
     <!-- ABOUT -->
     <section id="about" class="section">
@@ -55,6 +80,8 @@
     <!-- SKILLS -->
     <section id="skills" class="section dark">
         <h2>Skills & Interests</h2>
+       
+
 
         <div class="skills-grid">
             <div class="skill-card">UI / UX Design</div>
@@ -65,9 +92,94 @@
             <div class="skill-card">Java</div>
             <div class="skill-card">C Programming</div>
             <div class="skill-card">Graphic Design</div>
-            <div class="skill-card">Football</div>
+            <div class="skill-card">sales</div>
         </div>
+        <div class="project-card reveal">
+
     </section>
+
+    <!-- CREATIVE WORK -->
+<section class="section creative-section">
+    <h2 class="section-title">Creative Work</h2>
+    <p class="section-subtitle">
+        Exploring creativity through design, branding, and sound.
+    </p>
+
+    <div class="creative-grid">
+
+        <div class="creative-card">
+            <h3>Graphic & Brand Design</h3>
+            <p>
+                Visual design work including typography, color systems,
+                poster design, and apparel graphics for GRX.
+            </p>
+        </div>
+
+        <div class="creative-card">
+            <h3>Music Production</h3>
+            <p>
+                Digital music production exploring beats, ambient textures,
+                and experimental soundscapes.
+            </p>
+        </div>
+
+        <div class="creative-card">
+            <h3>UI / UX Thinking</h3>
+            <p>
+                Applying design thinking to interfaces with a focus on clarity,
+                hierarchy, and usability.
+            </p>
+        </div>
+<div class="project-card reveal">
+
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects" class="section projects-section">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">
+        A selection of projects that reflect my design thinking, development skills,
+        and branding experience.
+    </p>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <span class="project-tag">Web Development</span>
+            <h3>Personal Portfolio Website</h3>
+            <p>
+                A responsive portfolio built using HTML and CSS, focused on clean UI,
+                smooth layouts, and personal branding.
+            </p>
+            <a href="#" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">Branding</span>
+            <h3>GRX Clothing Brand</h3>
+            <p>
+                A visual branding and design project showcasing original T-shirt graphics,
+                typography, and layout systems.
+            </p>
+            <a href="#" class="project-link">View Project →</a>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">UI / UX</span>
+            <h3>Mobile App UI/UX Case Study</h3>
+            <p>
+                End-to-end UI/UX case study including user research,
+                wireframes, and final interface design.
+            </p>
+            <a href="#" class="project-link">View Case Study →</a>
+        </div>
+<div class="project-card reveal">
+
+    </div>
+</section>
+ 
 
     <!-- GRX BRAND -->
     <section id="grx" class="section">
@@ -78,45 +190,109 @@
         </p>
 
         <div class="gallery">
-            <img src="charmteep.png" alt="GRX Design 1">
-            <img src="stoic tee.png" alt="GRX Design 2">
-            <img src="axxtee.png" alt="GRX Design 3">
+            <img src="image/axxtee.png" alt="GRX Design 1">
+            <img src="image/charmteep.png" alt="GRX Design 2">
+            <img src="image/stoic tee.png" alt="GRX Design 3">
         </div>
     </section>
 
-    <!-- CERTIFICATE -->
-    <section id="certificate" class="section dark">
-        <h2>Web Development Certificate</h2>
-        <div class="certificate-box">
-            <img src="WhatsApp Image 2026-01-12 at 11.19.25 PM.jpeg" alt="Web Development Certificate">
+<!-- CERTIFICATIONS -->
+<section id="certificate" class="section dark">
+    <h2>Certifications</h2>
+
+    <div class="certificate-list">
+        <div class="certificate-item">
+    <img src="image/aicet.jpeg" alt="Generative AI Certificate">
+    <h3>Generative AI Certification</h3>
+    <p>
+        Gained foundational and practical knowledge of Generative AI concepts,
+        including large language models (LLMs), prompt engineering,
+        AI-powered tools, and real-world applications.
+    </p>
+    <div class="project-card reveal">
+
+</div>
+
+
+        <div class="certificate-item">
+            <img src="image/htmlcert.jpeg" alt="Web Development Certificate">
+            <h3>Web Development Certification</h3>
             <p>
-                Certified in Web Development, covering frontend technologies and practical project work.
+                Completed frontend web development training covering HTML, CSS,
+                JavaScript, and real-world projects.
             </p>
         </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <h2>Connect With Me</h2>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/rishit-verma-087b252623/" target="_blank">LinkedIn</a>
-
-            <a href="https://www.instagram.com/nvrmor._?igsh=M2luMHgzbW9qbzRr&utm_source=qr" target="_blank">Instagram</a>
+        <div class="certificate-item">
+            <img src="images/cert-uiux.jpg" alt="UI UX Design Certificate">
+            <h3>UI/UX Design Fundamentals</h3>
+            <p>
+                Learned user-centered design, wireframing, prototyping,
+                and usability principles.
+            </p>
         </div>
-    </section>
 
-    <footer>
+        <div class="certificate-item">
+            <img src="images/cert-python.jpg" alt="Python Data Analytics Certificate">
+            <h3>Python for Data Analytics</h3>
+            <p>
+                Covered data analysis, visualization, and Python libraries
+                like NumPy and Pandas.
+            </p>
+        </div>
+
+        <div class="certificate-item">
+            <img src="images/cert-graphic.jpg" alt="Graphic Design Certificate">
+            <h3>Graphic Design Essentials</h3>
+            <p>
+                Focused on typography, color theory, branding,
+                and visual communication.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+     
+
+   
+   
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+    <h2>Connect With Me</h2>
+
+    <div class="social-links">
+      
+
+
+        <a href="https://www.linkedin.com/in/rishit-verma-087b252623/" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.4-2.7 5-2.7 5.4 0 6.4 3.5 6.4 8.1V24h-5V16.1c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1V24h-5V8z"/></svg>
+            LinkedIn
+        </a>
+
+        <a href="https://www.instagram.com/nvrmor._" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5 1.3-.1 1.7-.1 4.9-.1zM12 6.5A5.5 5.5 0 1 0 17.5 12 5.5 5.5 0 0 0 12 6.5zm0 9A3.5 3.5 0 1 1 15.5 12 3.5 3.5 0 0 1 12 15.5zm5.8-9.9a1.3 1.3 0 1 1-1.3-1.3 1.3 1.3 0 0 1 1.3 1.3z"/></svg>
+            Instagram
+        </a>
+
+        <a href="mailto:rishitverma234@email.com" class="social-btn">
+            <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 9L4 6v12h16V6l-8 7z"/></svg>
+            Email
+        </a>
+
+        <a href="https://wa.me/919302066134" target="_blank" class="social-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.5c-.2.6-1.2 1.1-1.8 1.1-.5 0-1.1.1-3.7-1-3.1-1.3-5-4.4-5.2-4.6-.2-.2-1.3-1.8-1.3-3.4s.8-2.4 1.1-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.6.2.6.8 2 .8 2.2s0 .4-.1.6c-.1.2-.2.4-.4.6-.2.2-.4.4-.6 .6-.2 .2-.4 .4-.2 .8 .2 .4 .9 1 .9999999999999997 .5z"/></svg>
+            WhatsApp
+        </a>
+
+    </div>
+
+    <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+</section>
+
+
         <p>© 2026 Rishit Verma. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
